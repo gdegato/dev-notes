@@ -1,6 +1,7 @@
 import React from 'react'
 
 function NoteCard({ title, description, date, onRemove, checked, onchecked, variant = 'full' }) {
+  // note
 
   const formatDate = (dateString) => {
     if (!dateString) return null

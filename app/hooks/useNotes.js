@@ -13,6 +13,7 @@ function useNotes() {
         description: '',
         checked: false
     })
+
     useEffect(() => {
         const data = localStorage.getItem('notes')
         if (data) {
@@ -59,11 +60,7 @@ function useNotes() {
         router.push('/notes')
     }
 
-    const editNote = (id, title, description, checked) => {
-        const updateNotes = notes.map((note) => { note.id !== id ? { ...note, id, title, description, checked } : note })
-        setNotes(updateNotes)
-    }
-
+   
     const toggleChecked = (id) => {
 
         const updateNotes = notes.map((note) => {
@@ -76,7 +73,7 @@ function useNotes() {
     }
 
 
-    return { notes, setNotes, note, setNote, handleSubmit, removeNote, editNote, toggleChecked }
+    return { notes, setNotes, note, setNote, handleSubmit, removeNote, toggleChecked }
 }
 
 export default useNotes
